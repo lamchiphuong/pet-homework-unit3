@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Tiêu đề trang và preview khi chia sẻ link -->
+  <title> BÀI TẬP - Verbs + to / -ing 🐝📚</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="BÀI TẬP UNIT 3: GRAMMAR: Verbs + to / -ing 🐝📚" />
+  <meta property="og:description" content="Chào các em! Hãy cùng ôn lại cấu trúc Verbs + to / -ing và làm bài tập nhé! 🚀" />
+  <meta property="og:image" content="https://www.clipartmax.com/png/middle/207-2072783_homework-bee-with-a-pencil.png" />
+  <meta property="og:image:alt" content="Chú ong dễ thương cầm bút chì làm bài tập" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chú Ong Chăm Chỉ - Verbs + to / -ing Practice 🐝📚" />
+  <meta name="twitter:description" content="Chào các em! Hãy cùng chú ong chăm chỉ ôn lại cấu trúc Verbs + to / -ing và làm bài tập nhé! 🚀" />
+  <meta name="twitter:image" content="https://cdn-icons-png.flaticon.com/512/4090/4090395.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round&family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
+      min-height: 100vh;
+      overflow: hidden;
+      cursor: url('https://cdn.cursor.sh/cursors/book-open.png'), auto;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Ong bay */
+    .flying-bee {
+      position: absolute;
+      font-size: 60px;
+      pointer-events: none;
+      animation: fly linear infinite;
+      z-index: 10;
+    }
+
+    @keyframes fly {
+      0% { transform: translate(0, 0) rotate(0deg); opacity: 0; }
+      10% { opacity: 1; }
+      90% { opacity: 1; }
+      100% { transform: translate(var(--dx), var(--dy)) rotate(var(--rot)); opacity: 0; }
+    }
+
+    /* Modal chung */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .modal {
+      background: white;
+      border-radius: 24px;
+      padding: 32px 28px;
+      width: 92%;
+      max-width: 720px;
+      max-height: 88vh;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+      text-align: center;
+      transform: scale(0.75);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal.active {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    .bee {
+      font-size: 78px;
+      margin-bottom: 16px;
+      animation: wave 2.2s infinite ease-in-out;
+      display: inline-block;
+      transform-origin: bottom;
+    }
+
+    @keyframes wave {
+      0%, 100% { transform: rotate(0deg); }
+      25% { transform: rotate(14deg); }
+      50% { transform: rotate(-10deg); }
+      75% { transform: rotate(8deg); }
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Varela Round', sans-serif;
+      color: #2c3e50;
+    }
+
+    h1 { font-size: 32px; }
+    h2 { font-size: 26px; margin-bottom: 12px; }
+    h3 { font-size: 22px; color: #d35400; margin: 20px 0 10px; }
+    h4 { font-size: 19px; margin: 16px 0 8px; color: #2980b9; }
+
+    p {
+      font-size: 17px;
+      color: #5d6d7e;
+      line-height: 1.5;
+      margin-bottom: 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 16px;
+    }
+
+    .btn {
+      padding: 14px 36px;
+      font-size: 17px;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.28s ease;
+    }
+
+    .btn-primary {
+      background: #feca57;
+      color: #2c3e50;
+      box-shadow: 0 6px 0 #ff9f1a;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 0 #ff9f1a;
+    }
+
+    .btn-secondary {
+      background: #dfe6e9;
+      color: #636e72;
+      box-shadow: 0 6px 0 #b2bec3;
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 0 #b2bec3;
+    }
+
+    .btn-review {
+      background: #a29bfe;
+      color: white;
+      box-shadow: 0 6px 0 #6c5ce7;
+      padding: 15px 38px;
+    }
+
+    .btn-review:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 0 #6c5ce7;
+    }
+
+    .countdown {
+      font-size: 54px;
+      font-weight: 700;
+      color: #e17055;
+      margin: 20px 0;
+    }
+
+    .small-text {
+      font-size: 15px;
+      color: #999;
+      margin-top: 16px;
+    }
+
+    /* Nội dung ôn bài */
+    .review-container {
+      flex: 1;
+      overflow-y: auto;
+      margin: 16px 0;
+      padding-right: 8px;
+      max-height: 60vh;
+      text-align: left;
+      font-size: 16px;
+      line-height: 1.7;
+      color: #2c3e50;
+    }
+
+    .review-container ul {
+      margin: 10px 0 16px 24px;
+    }
+
+    .review-container li {
+      margin-bottom: 6px;
+    }
+
+    .review-container strong {
+      color: #e74c3c;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 12px;
+      right: 16px;
+      font-size: 32px;
+      color: #b2bec3;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    .review-container::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .review-container::-webkit-scrollbar-thumb {
+      background: #a29bfe;
+      border-radius: 10px;
+    }
+
+    /* Màn hình chính */
+    #mainScreen {
+      text-align: center;
+      max-width: 600px;
+      width: 100%;
+      padding: 40px 20px;
+    }
+
+    #mainScreen .bee-big {
+      font-size: 120px;
+      margin-bottom: 24px;
+      animation: wave 2.8s infinite ease-in-out;
+    }
+
+    .hidden { display: none; }
+
+    @media (max-width: 500px) {
+      .modal { padding: 24px 20px; }
+      h1 { font-size: 28px; }
+      h2 { font-size: 23px; }
+      .bee, .bee-big { font-size: 80px; }
+      .btn { padding: 12px 30px; font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Ong bay -->
+<div class="flying-bee">🐝</div>
+<div class="flying-bee">🐝</div>
+<div class="flying-bee">🐝</div>
+<div class="flying-bee">🐝</div>
+
+<!-- Pop-up chào mừng -->
+<div class="modal-overlay" id="welcomeModal">
+  <div class="modal" id="welcomeContent">
+    <button class="close-btn" id="closeWelcome">×</button>
+    <div class="bee">🐝</div>
+    <h2>Chào bạn!</h2>
+    <p>Hãy cùng chú ong chăm chỉ ôn lại cấu trúc<br><strong>Verbs + to infinitive / -ing</strong> nhé!</p>
+
+    <div class="btn-group">
+      <button class="btn btn-review" id="btnReview">Xem lại bài học 📖</button>
+    </div>
+
+    <div class="btn-group">
+      <button class="btn btn-primary" id="btnReady">Sẵn sàng làm bài ✧</button>
+      <button class="btn btn-secondary" id="btnNotYet">Chưa đâu ૮₍ ˶•⤙•˶ ₎ა</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal xem lại bài học -->
+<div class="modal-overlay" id="reviewModal">
+  <div class="modal" id="reviewContent">
+    <button class="close-btn" id="closeReview">×</button>
+    <h2>Ôn lại: Verbs followed by to / -ing</h2>
+    <p style="text-align:center; margin-bottom:20px;">Hãy đọc kỹ và ghi nhớ trước khi làm bài nhé! 🐝</p>
+
+    <div class="review-container">
+      <h3>1️⃣ ĐỘNG TỪ CHỈ THEO SAU BỞI TO + V</h3>
+      <p>👉 Thường diễn tả ý định, quyết định, mong muốn, kế hoạch</p>
+      <ul>
+        <li><strong>afford</strong>: có đủ khả năng</li>
+        <li><strong>agree</strong>: đồng ý</li>
+        <li><strong>arrange</strong>: sắp xếp</li>
+        <li><strong>attempt</strong>: cố gắng</li>
+        <li><strong>choose</strong>: chọn</li>
+        <li><strong>decide</strong>: quyết định</li>
+        <li><strong>expect</strong>: mong đợi</li>
+        <li><strong>help</strong>: giúp</li>
+        <li><strong>hope</strong>: hi vọng</li>
+        <li><strong>intend</strong>: dự định</li>
+        <li><strong>learn</strong>: học</li>
+        <li><strong>manage</strong>: xoay xở / làm được</li>
+        <li><strong>offer</strong>: đề nghị</li>
+        <li><strong>plan</strong>: lên kế hoạch</li>
+        <li><strong>promise</strong>: hứa</li>
+        <li><strong>refuse</strong>: từ chối</li>
+        <li><strong>seem</strong>: có vẻ</li>
+        <li><strong>want</strong>: muốn</li>
+        <li><strong>would like</strong>: muốn (lịch sự)</li>
+      </ul>
+
+      <h3>2️⃣ ĐỘNG TỪ CHỈ THEO SAU BỞI V-ING</h3>
+      <p>👉 Thường nói về sở thích, ghét, tránh, trì hoãn, trải nghiệm</p>
+      <ul>
+        <li><strong>admit</strong>: thừa nhận</li>
+        <li><strong>avoid</strong>: tránh</li>
+        <li><strong>can’t stand</strong>: không chịu nổi</li>
+        <li><strong>consider</strong>: cân nhắc</li>
+        <li><strong>dislike</strong>: không thích</li>
+        <li><strong>don’t mind</strong>: không phiền</li>
+        <li><strong>enjoy</strong>: thích</li>
+        <li><strong>fancy</strong>: thích (Anh-Anh)</li>
+        <li><strong>feel like</strong>: cảm thấy muốn</li>
+        <li><strong>finish</strong>: hoàn thành</li>
+        <li><strong>give up</strong>: từ bỏ</li>
+        <li><strong>imagine</strong>: tưởng tượng</li>
+        <li><strong>mind</strong>: phiền</li>
+        <li><strong>miss</strong>: bỏ lỡ / nhớ</li>
+        <li><strong>postpone</strong>: hoãn</li>
+        <li><strong>practise</strong>: luyện tập</li>
+        <li><strong>put off</strong>: trì hoãn</li>
+        <li><strong>prevent</strong>: ngăn cản</li>
+        <li><strong>suggest</strong>: gợi ý</li>
+      </ul>
+
+      <h3>3️⃣ ĐỘNG TỪ DÙNG ĐƯỢC CẢ HAI (KHÔNG KHÁC NGHĨA)</h3>
+      <ul>
+        <li><strong>begin, start, continue, intend</strong></li>
+      </ul>
+      <p>👉 Dùng dạng nào cũng được, nghĩa gần như nhau.</p>
+
+      <h3>4️⃣ ĐỘNG TỪ DÙNG ĐƯỢC CẢ HAI (KHÁC NGHĨA NHẸ)</h3>
+      <ul>
+        <li><strong>like, love, hate, prefer</strong></li>
+      </ul>
+      <p>📌 <strong>V-ing</strong>: nhấn mạnh trải nghiệm<br>
+      <strong>to V</strong>: nhấn mạnh kết quả / thói quen<br>
+      ⚠️ Sau <strong>hate / love</strong> thường dùng V-ing hơn.</p>
+
+      <h3>5️⃣ ĐỘNG TỪ DÙNG ĐƯỢC CẢ HAI (KHÁC NGHĨA RÕ RỆT)</h3>
+      <ul>
+        <li><strong>forget</strong>: to V = quên làm / V-ing = quên vì không nhớ</li>
+        <li><strong>remember</strong>: to V = nhớ để làm / V-ing = nhớ đã làm</li>
+        <li><strong>stop</strong>: to V = dừng lại để làm việc khác / V-ing = ngừng hẳn</li>
+        <li><strong>try</strong>: to V = cố gắng / V-ing = thử xem sao</li>
+        <li><strong>go on</strong>: to V = chuyển sang việc khác / V-ing = tiếp tục</li>
+      </ul>
+
+      <h3>6️⃣ QUY TẮC QUAN TRỌNG</h3>
+      <ul>
+        <li>Phủ định: <strong>not</strong> đặt sau động từ đầu (decide not to go, avoid not going...)</li>
+        <li>Có tân ngữ: tân ngữ đứng sau động từ đầu (help my friend to do...)</li>
+      </ul>
+
+      <h4>MẸO NHỚ</h4>
+      <p><strong>Muốn – quyết – hứa → TO</strong><br>
+      <strong>Thích – ghét – tránh – hoãn → ING</strong><br>
+      <strong>Nhớ – quên – dừng – thử → đổi nghĩa</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- Pop-up đếm ngược -->
+<div class="modal-overlay" id="countdownModal">
+  <div class="modal" id="countdownContent">
+    <div class="bee">🐝💨</div>
+    <h2>Nhanh lên nào!</h2>
+    <p>Bạn có <strong>30 giây</strong> để sẵn sàng<br>Không sẵn sàng cũng phải làm bài đấy nhé!</p>
+    <div class="countdown" id="timer">30</div>
+    <div class="small-text">Đang đếm ngược... ⏳</div>
+  </div>
+</div>
+
+<!-- Màn hình chính -->
+<div id="mainScreen" class="hidden">
+  <div class="bee-big">🐝✨</div>
+  <h1>Chào các em!</h1>
+  <p>Hãy làm bài tập để ngày càng tiến bộ nhé! 💪📚</p>
+  <button class="btn btn-primary" id="btnStartMain" style="font-size: 20px; padding: 18px 48px; margin-top: 32px;">
+    Bắt đầu làm bài 🌐 🚀
+  </button>
+</div>
+
+<script>
+  const WORKSHEET_LINK = "https://www.liveworksheets.com/c?a=s&g=PET&s=UNIT+3&t=Yqy7FnAHYs&sr=y&is=y&ia=y&l=74&i=otdotnd&r=je&f=dzdxzuzs&ms=uz&cd=p-ti3-l---piii39jznjzlnqrngnmgxgpxg&mw=hs";
+
+  const welcomeOverlay   = document.getElementById('welcomeModal');
+  const reviewOverlay    = document.getElementById('reviewModal');
+  const countdownOverlay = document.getElementById('countdownModal');
+  const mainScreen       = document.getElementById('mainScreen');
+
+  const welcomeContent   = document.getElementById('welcomeContent');
+  const reviewContent    = document.getElementById('reviewContent');
+  const countdownContent = document.getElementById('countdownContent');
+
+  function showModal(overlay, content) {
+    overlay.classList.add('active');
+    setTimeout(() => content.classList.add('active'), 50);
+  }
+
+  function hideModal(overlay, content) {
+    content.classList.remove('active');
+    setTimeout(() => overlay.classList.remove('active'), 400);
+  }
+
+  function showMainScreen() {
+    mainScreen.classList.remove('hidden');
+  }
+
+  function hideAllModals() {
+    [welcomeOverlay, reviewOverlay, countdownOverlay].forEach(ov => {
+      ov.classList.remove('active');
+    });
+  }
+
+  window.addEventListener('load', () => {
+    showModal(welcomeOverlay, welcomeContent);
+    startFlyingBees();
+  });
+
+  document.getElementById('btnReview').addEventListener('click', () => {
+    showModal(reviewOverlay, reviewContent);
+  });
+
+  document.getElementById('closeReview').addEventListener('click', () => {
+    hideModal(reviewOverlay, reviewContent);
+  });
+
+  document.getElementById('closeWelcome').addEventListener('click', () => {
+    hideModal(welcomeOverlay, welcomeContent);
+    hideAllModals();
+    showMainScreen();
+  });
+
+  document.getElementById('btnReady').addEventListener('click', () => {
+    window.location.href = WORKSHEET_LINK;
+  });
+
+  document.getElementById('btnStartMain').addEventListener('click', () => {
+    window.location.href = WORKSHEET_LINK;
+  });
+
+  document.getElementById('btnNotYet').addEventListener('click', () => {
+    hideModal(welcomeOverlay, welcomeContent);
+    setTimeout(() => {
+      showModal(countdownOverlay, countdownContent);
+      startCountdown();
+    }, 450);
+  });
+
+  function startCountdown() {
+    let timeLeft = 30;
+    const timerEl = document.getElementById('timer');
+    const interval = setInterval(() => {
+      timeLeft--;
+      timerEl.textContent = timeLeft;
+      if (timeLeft <= 10) {
+        timerEl.style.color = timeLeft <= 5 ? '#d63031' : '#e67e22';
+      }
+      if (timeLeft <= 0) {
+        clearInterval(interval);
+        window.location.href = WORKSHEET_LINK;
+      }
+    }, 1000);
+  }
+
+  function startFlyingBees() {
+    const bees = document.querySelectorAll('.flying-bee');
+    bees.forEach(bee => resetBee(bee));
+
+    function resetBee(bee) {
+      const duration = Math.random() * 15 + 10;
+      const startX = Math.random() * window.innerWidth;
+      const startY = Math.random() * window.innerHeight;
+      const dx = (Math.random() - 0.5) * window.innerWidth * 2;
+      const dy = (Math.random() - 0.5) * window.innerHeight * 2;
+      const rot = Math.random() * 720 - 360;
+
+      bee.style.left = startX + 'px';
+      bee.style.top = startY + 'px';
+      bee.style.animationDuration = duration + 's';
+      bee.style.setProperty('--dx', dx + 'px');
+      bee.style.setProperty('--dy', dy + 'px');
+      bee.style.setProperty('--rot', rot + 'deg');
+
+      setTimeout(() => resetBee(bee), duration * 1000);
+    }
+  }
+</script>
+
+</body>
+</html>
