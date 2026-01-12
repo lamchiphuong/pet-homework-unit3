@@ -9,13 +9,13 @@
   <meta property="og:title" content="Bài tập về nhà Unit 3. Vocabulary: Phrasal Verbs & Hobbies" />
   <meta property="og:description" content="Hãy làm bài tập về nhà trước khi quên hết mọi kiến thức! 🚀" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https:lamchiphuong.github.io/pet-homework-unit3" /> <!-- Thay bằng link thật nếu có -->
+  <meta property="og:url" content="https://lamchiphuong.github.io/pet-homework-unit3" />
   <meta property="og:image" content="https://cdn-icons-png.flaticon.com/512/207/207190.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:site_name" content="Bài tập Tiếng Anh vui vẻ" />
 
-  <!-- Twitter Card (hỗ trợ thêm cho X/Twitter) -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Bài tập về nhà Unit 3. Vocabulary: Phrasal Verbs & Hobbies">
   <meta name="twitter:description" content="Hãy làm bài tập về nhà trước khi quên hết mọi kiến thức! 🚀">
@@ -378,17 +378,22 @@
   </div>
 
   <script>
+    // Đóng popup và nếu là popup chào mừng thì hiển thị nội dung chính
     function closePopup(id) {
       document.getElementById(id).classList.remove('active');
+      if (id === 'welcomePopup') {
+        document.getElementById('mainContent').classList.add('visible');
+      }
     }
 
+    // Mở popup
     function openPopup(id) {
       document.getElementById(id).classList.add('active');
     }
 
+    // Nút "Sẵn sàng rồi ạ!" cũng sẽ đóng popup chào và hiện bài tập
     function startExercise() {
       closePopup('welcomePopup');
-      document.getElementById('mainContent').classList.add('visible');
     }
   </script>
 </body>
